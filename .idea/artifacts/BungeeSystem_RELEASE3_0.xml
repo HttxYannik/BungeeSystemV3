@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="BungeeSystem-RELEASE3.0">
+    <output-path>V:/</output-path>
+    <root id="archive" name="BungeeSystem-RELEASE3.0.jar" />
+  </artifact>
+</component>
