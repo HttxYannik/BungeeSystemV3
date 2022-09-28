@@ -1,6 +1,10 @@
 package dev.shyzouka.bungeesystem;
 
+import dev.shyzouka.bungeesystem.commands.Broadcast;
+import dev.shyzouka.bungeesystem.handler.LoginListener;
+import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Plugin;
+import net.md_5.bungee.api.plugin.PluginManager;
 
 public class BungeeSystem extends Plugin {
     private static BungeeSystem instance;
@@ -12,7 +16,13 @@ public class BungeeSystem extends Plugin {
     public void onEnable() {
         instance = this;
 
+        PluginManager pm = ProxyServer.getInstance().getPluginManager();
 
+        //REGISTERING LISTENERS
+        pm.registerListener(this, new LoginListener());
+
+        //REGISTERING COMMANDS
+        pm.registerCommand(this, new Broadcast());
 
     }
 
@@ -36,6 +46,6 @@ public class BungeeSystem extends Plugin {
     public static String getBroadcast() {
         return broadcast;
     }
-    
+
 
 }
